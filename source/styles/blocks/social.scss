@@ -1,0 +1,83 @@
+.social {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 4px;
+  position: relative;
+
+  &::before {
+    content: "";
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    background: #bdbdbd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &--vk {
+    &::before {
+      width: 20px;
+      height: 20px;
+      mask-image: url("../../images/icons/stack.svg#vk");
+      mask-size: 20px 20px;
+    }
+  }
+
+  &--pinterest {
+    &::before {
+      width: 22px;
+      height: 22px;
+      mask-image: url("../../images/icons/stack.svg#pinterest");
+      mask-size: 22px 22px;
+    }
+  }
+
+  &--ok {
+    &::before {
+      width: 20px;
+      height: 20px;
+      mask-image: url("../../images/icons/stack.svg#ok");
+      mask-size: 20px 20px;
+    }
+  }
+
+  &:hover {
+    background-color: #f0ebff;
+  }
+
+  &:hover::before {
+    background-color: #7859cf;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #f0ebff;
+  }
+
+  &:focus-visible::before {
+    outline: none;
+    background-color: #7859cf;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #f0ebff;
+    }
+
+    &:focus::before {
+      outline: none;
+      background-color: #7859cf;
+    }
+  }
+
+  &:active {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:active::before {
+    background-color: #7859cf;
+  }
+}

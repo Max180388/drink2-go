@@ -1,0 +1,46 @@
+.catalog-drinks {
+  padding-top: 45px;
+
+  @media (min-width: $desktop) {
+    width: 1042px;
+    box-sizing: border-box;
+    padding: 21px 0 0 30px;
+  }
+}
+
+.catalog-drinks__sorting {
+  margin-bottom: 19px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 29px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 29px;
+  }
+}
+
+.catalog-drinks__list {
+  @include ul-null;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 70px;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
+  }
+}
+
+.catalog-drinks__item:not(:last-child) {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+  }
+}

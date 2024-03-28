@@ -1,0 +1,22 @@
+@mixin button-null {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+@mixin ul-null {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin input-null {
+  border: none;
+  padding: 0;
+}
+
+@mixin fieldset-null {
+  margin: 0;
+  padding: 0;
+  border: none;
+}

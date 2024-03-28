@@ -1,0 +1,90 @@
+.sorting {
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  @media (min-width: $tablet) {
+    width: 728px;
+    justify-content: flex-end;
+    gap: 19px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1012px;
+    gap: 20px;
+  }
+}
+
+.sorting__title {
+  width: 105px;
+  margin: 0;
+  padding-left: 3px;
+  box-sizing: border-box;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.sorting__select-wrap {
+  width: 161px;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 6px;
+    background-image: url("../../images/icons/stack.svg#arrow-catalog");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 10px 6px;
+    position: absolute;
+    top: 9px;
+    right: 6px;
+
+    @media (min-width: $tablet) {
+      right: 10px;
+    }
+  }
+}
+
+.sorting__select-wrap:focus-within::after {
+  transform: rotate(180deg);
+}
+
+.sorting__select {
+  width: 161px;
+  padding-right: 21px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: #7859cf;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    padding-left: 6px;
+  }
+
+  &:hover {
+    background-color: #f0ebff;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #f0ebff;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #f0ebff;
+    }
+  }
+}

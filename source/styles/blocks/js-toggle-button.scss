@@ -1,0 +1,39 @@
+.js-toggle-button {
+  width: 60px;
+  height: 60px;
+  margin-right: -20px;
+  padding-left: 22px;
+  position: relative;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 16px;
+    height: 2px;
+    background-color: #333333;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
+  }
+
+  &::before {
+    top: 24px;
+  }
+
+  &::after {
+    bottom: 24px;
+  }
+
+  &:active {
+    background-color: #f0ebff;
+  }
+}
+
+.js-toggle-button__wrap {
+  width: 16px;
+  height: 2px;
+  display: block;
+  background-color: #333333;
+}

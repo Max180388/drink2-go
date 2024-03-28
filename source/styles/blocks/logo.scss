@@ -1,0 +1,36 @@
+.logo {
+  padding: 12px 0 0;
+
+  @media (min-width: $tablet) {
+    padding: 22px 0 17px;
+  }
+
+  @media (min-width: $desktop) {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.logo__link-image {
+  @media (min-width: $tablet) {
+    width: 82px;
+    height: 36px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 170px;
+  }
+}
+
+.logo__text {
+  display: none;
+
+  @media (min-width: $desktop) {
+    margin: 0;
+    padding: 2px 0 0;
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

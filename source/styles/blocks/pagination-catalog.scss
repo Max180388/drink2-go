@@ -1,0 +1,187 @@
+.pagination-catalog {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  gap: 20px;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 91px 40px 40px 40px 104px;
+    justify-content: end;
+  }
+}
+
+.pagination-catalog__button {
+  @include button-null;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    width: unset;
+    box-sizing: border-box;
+  }
+
+  &--prev {
+    transform: rotate(90deg);
+
+    @media (min-width: $tablet) {
+      width: 91px;
+      transform: none;
+    }
+  }
+
+  &--next {
+    transform: rotate(-90deg);
+
+    @media (min-width: $tablet) {
+      width: 104px;
+      transform: none;
+    }
+  }
+
+  &:hover {
+    background-color: #9070ec;
+  }
+
+  &:hover::before {
+    background-color: #ffffff;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #9070ec;
+  }
+
+  &:focus-visible::before {
+    outline: none;
+    background-color: #ffffff;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #9070ec;
+    }
+
+    &:focus::before {
+      outline: none;
+      background-color: #ffffff;
+    }
+  }
+
+  &:active {
+    background-color: #593cac;
+  }
+
+  &:active::before {
+    background-color: #ffffff;
+  }
+
+  &:disabled {
+    background-color: #e2e2e2;
+  }
+
+  &:disabled::before {
+    background-color: #ffffff;
+  }
+
+  &::before {
+    content: "";
+    width: 10px;
+    height: 6px;
+    mask-image: url("../../images/icons/stack.svg#arrow-catalog");
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    mask-size: 10px 6px;
+    background-color: #7859cf;
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    left: 50%;
+    margin-left: -5px;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+}
+
+.pagination-catalog__button-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  @media (min-width: $tablet) {
+    display: block;
+    position: static;
+    width: unset;
+    height: unset;
+    margin: 0;
+    overflow: visible;
+    border: none;
+    clip: unset;
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #7859cf;
+  }
+}
+
+.pagination-catalog__link {
+  width: 40px;
+  height: 40px;
+  padding: 9px 5px;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  color: #7859cf;
+
+  &:hover {
+    background-color: #9070ec;
+    color: #ffffff;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #9070ec;
+    color: #ffffff;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #9070ec;
+      color: #ffffff;
+    }
+  }
+
+  &:active {
+    background-color: #593cac;
+    color: #ffffff;
+  }
+
+  &--active {
+    font-weight: 600;
+    color: #333333;
+    background-color: transparent;
+  }
+
+  &--disabled {
+    background-color: #e2e2e2;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,62 @@
+.nav {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+
+  @media (min-width: $tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-columns: 619px 1fr;
+  }
+}
+
+.nav__list {
+  @include ul-null;
+
+  &--site-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+
+    @media (min-width: $tablet) {
+      display: block;
+      position: static;
+    }
+  }
+}
+
+.nav__button {
+  @include button-null;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.nav--opened .nav__list--site-menu {
+  display: block;
+
+  @media (min-width: $tablet) {
+    display: grid;
+  }
+}
+
+.nav--opened .nav__button-wrap {
+  background-color: transparent;
+}
+
+.nav--opened .nav__button::before {
+  transform: rotate(-45deg);
+  left: 22px;
+  top: 29px;
+}
+
+.nav--opened .nav__button::after {
+  transform: rotate(45deg);
+  left: 22px;
+  bottom: 29px;
+}

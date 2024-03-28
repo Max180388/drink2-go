@@ -1,0 +1,39 @@
+/* GLOBAL */
+@import "./global/variables.scss";
+@import "./global/fonts.scss";
+@import "./global/mixin.scss";
+@import "./global/visually-hidden.scss";
+@import "./global/main-button.scss";
+@import "./global/section-title.scss";
+@import "./global/section-subtitile.scss";
+
+/* BLOCKS */
+@import "./blocks/body.scss";
+@import "./blocks/header.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/user-menu.scss";
+@import "./blocks/js-toggle-button.scss";
+@import "./blocks/site-menu.scss";
+@import "./blocks/promo.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/slider-button.scss";
+@import "./blocks/slider-pagination.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/filter.scss";
+@import "./blocks/filter-title.scss";
+@import "./blocks/price-list.scss";
+@import "./blocks/filter-label.scss";
+@import "./blocks/milk-radio.scss";
+@import "./blocks/country-checkbox.scss";
+@import "./blocks/catalog-drinks.scss";
+@import "./blocks/sorting.scss";
+@import "./blocks/product-card.scss";
+@import "./blocks/pagination-catalog.scss";
+@import "./blocks/map.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/social.scss";
+
+/* VENDOR */
+@import "../vendor/nouislider/nouislider.css";

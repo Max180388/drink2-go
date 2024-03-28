@@ -1,0 +1,381 @@
+.footer {
+  background-color: #ffffff;
+
+  @media (min-width: $tablet) {
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 228px 227px 227px;
+    gap: 0 25px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1440px;
+    padding: 0 40px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer__wrap {
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #f0ebff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    &--logo-links {
+      width: 100%;
+      grid-column: 1/-1;
+    }
+
+    &--copyright {
+      grid-column: 1/-1;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    &--logo-links {
+      width: 100%;
+      grid-column: auto;
+    }
+  }
+}
+
+.footer__wrapper {
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px 20px 21px;
+  box-sizing: border-box;
+
+  @media (min-width: $tablet) {
+    width: unset;
+    margin: 0;
+    padding: 9px 0 21px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 49px 3px 0;
+  }
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+
+  @media (min-width: $tablet) {
+    padding: 40px 4px 21px 0;
+    grid-template-columns: 170px 160px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.footer__logo-wrap {
+  padding-top: 2px;
+
+  @media (min-width: $desktop) {
+    width: 300px;
+    padding-top: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.footer__logo-image {
+  display: block;
+
+  @media (min-width: $tablet) {
+    width: 170px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 10px;
+  }
+}
+
+.footer__logo-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  @media (min-width: $desktop) {
+    display: block;
+    position: static;
+    width: unset;
+    height: unset;
+    margin: 0;
+    overflow: visible;
+    border: none;
+    clip: unset;
+  }
+}
+
+.footer__social-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (min-width: $desktop) {
+    width: 160px;
+  }
+}
+
+.footer__social {
+  justify-self: center;
+}
+
+.footer__title {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #7859cf;
+}
+
+.footer__list {
+  @include ul-null;
+  margin-bottom: 8px;
+
+  &--contacts {
+    margin-bottom: 0;
+  }
+}
+
+.footer__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &--contacts {
+    @media (min-width: $desktop) {
+      padding-top: 1px;
+    }
+  }
+
+  &--contacts:not(:last-child) {
+    margin-bottom: 16px;
+
+    @media (min-width: $desktop) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.footer__item-link {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333333;
+
+  &:hover {
+    color: #9070ec;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: #9070ec;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      color: #9070ec;
+    }
+  }
+
+  &:active {
+    color: #593cac;
+  }
+}
+
+.footer__address {
+  padding-left: 19px;
+  font-style: normal;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding-left: 20px;
+  }
+
+  &::after {
+    content: "";
+    width: 13px;
+    height: 16px;
+    background-image: url("../../images/icons/stack.svg#pin");
+    background-position: 50% 50%;
+    background-size: 13px 16px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    @media (min-width: $desktop) {
+      left: 1px;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    width: 175px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 270px;
+  }
+}
+
+.footer__tel {
+  padding-left: 19px;
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  text-decoration: none;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding-left: 20px;
+  }
+
+  &::after {
+    content: "";
+    width: 13px;
+    height: 16px;
+    background-image: url("../../images/icons/stack.svg#tel");
+    background-position: 50% 50%;
+    background-size: 13px 16px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    @media (min-width: $desktop) {
+      left: 1px;
+    }
+  }
+}
+
+.footer__copyright {
+  text-align: center;
+  padding-top: 17px;
+  padding-bottom: 29px;
+
+  @media (min-width: $tablet) {
+    padding-top: 6px;
+    padding-bottom: 39px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 17px;
+  }
+}
+
+.footer__copyright-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: #bdbdbd;
+}
+
+.footer__copyright-link {
+  padding-right: 17px;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  color: #bdbdbd;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding-right: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-right: 16px;
+  }
+
+  &::after {
+    content: "";
+    width: 12px;
+    height: 16px;
+    mask-image: url("../../images/icons/stack.svg#html-academy");
+    mask-size: 12px 16px;
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    background: #bdbdbd;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @media (min-width: $tablet) {
+      right: 4px;
+    }
+
+    @media (min-width: $desktop) {
+      right: -1px;
+    }
+  }
+
+  &:hover {
+    color: #7859cf;
+  }
+
+  &:hover::after {
+    background-color: #7859cf;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: #7859cf;
+  }
+
+  &:focus-visible::after {
+    outline: none;
+    background-color: #7859cf;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      color: #7859cf;
+    }
+
+    &:focus::after {
+      outline: none;
+      background-color: #7859cf;
+    }
+  }
+
+  &:active {
+    color: #593cac;
+  }
+
+  &:active::after {
+    background-color: #593cac;
+  }
+}

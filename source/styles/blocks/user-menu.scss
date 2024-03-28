@@ -1,0 +1,127 @@
+.user-menu {
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet) {
+    height: unset;
+    overflow: visible;
+    justify-self: end;
+  }
+
+  @media (min-width: $desktop) {
+    gap: 18px;
+  }
+}
+
+.user-menu__item {
+  width: 60px;
+  height: 60px;
+
+  @media (min-width: $tablet) {
+    height: unset;
+    min-height: 80px;
+  }
+
+  @media (min-width: $desktop) {
+    width: unset;
+  }
+}
+
+.user-menu__link {
+  display: block;
+  height: 60px;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    height: 80px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 33px 20px 20px 47px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  &::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    mask-position: 50% 50%;
+    mask-size: 16px 16px;
+    mask-repeat: no-repeat;
+    background-color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $tablet) {
+      height: 80px;
+    }
+  }
+
+  &--user::before {
+    mask-image: url("../../images/icons/stack.svg#user");
+  }
+
+  &--cart::before {
+    mask-image: url("../../images/icons/stack.svg#cart");
+  }
+
+  &:hover::before {
+    background-color: #7859cf;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible::before {
+    outline: none;
+    background-color: #7859cf;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::before {
+      outline: none;
+      background-color: #7859cf;
+    }
+  }
+
+  &:active::before {
+    background-color: #7859cf;
+  }
+
+  &:active {
+    background-color: #f0ebff;
+  }
+}
+
+.user-menu__link-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  @media (min-width: $desktop) {
+    display: block;
+    position: static;
+    width: unset;
+    height: unset;
+    margin: 0;
+    overflow: visible;
+    border: none;
+    clip: unset;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #333333;
+  }
+}

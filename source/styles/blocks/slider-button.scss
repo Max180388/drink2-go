@@ -1,0 +1,79 @@
+.slider-button__button {
+  @include button-null;
+  height: 100%;
+  padding: 10px;
+  width: 20px;
+  position: absolute;
+  top: 0;
+
+  @media (min-width: $tablet) {
+    width: 80px;
+    height: calc(100% - 198px);
+  }
+
+  @media (min-width: $desktop) {
+    width: 80px;
+    height: 100%;
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    mask-image: url("../../images/icons/stack.svg#slider-button");
+    mask-size: 11px 20px;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    background-color: #7859cf;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--prev {
+    left: 0;
+
+    @media (min-width: $desktop) {
+      left: 50%;
+      transform: translateX(-721px);
+    }
+  }
+
+  &--next {
+    transform: rotate(180deg);
+    right: 0;
+
+    @media (min-width: $desktop) {
+      right: 50%;
+      transform: rotate(180deg) translateX(-721px);
+    }
+  }
+
+  &:disabled::before {
+    background-color: #bdbdbd;
+  }
+
+  &:disabled:hover {
+    background: transparent;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, #ffffff, transparent);
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: linear-gradient(90deg, #ffffff, transparent);
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background: linear-gradient(90deg, #ffffff, transparent);
+    }
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(121, 89, 207, 0.25), transparent);
+  }
+}

@@ -1,0 +1,21 @@
+.header {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 36px 220px;
+  gap: 24px;
+
+  @media (min-width: $tablet) {
+    width: 768px;
+    min-height: 80px;
+    grid-template-columns: 125px 1fr;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1440px;
+    padding: 0 40px;
+    grid-template-columns: 350px 1fr;
+  }
+}

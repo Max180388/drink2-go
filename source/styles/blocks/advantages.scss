@@ -1,0 +1,166 @@
+.advantages {
+  padding: 50px 20px 60px;
+
+  @media (min-width: $tablet) {
+    padding-bottom: 99px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 100px 40px 119px;
+  }
+}
+
+.advantages__section-title {
+  text-align: center;
+  margin-bottom: 5px;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 4px;
+  }
+}
+
+.advantages__title {
+  width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet) {
+    width: 650px;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 850px;
+    margin-bottom: 59px;
+  }
+}
+
+.advantages__list {
+  @include ul-null;
+  margin-top: 3px;
+
+  @media (min-width: $tablet) {
+    width: 728px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 10px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 1360px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 30px;
+  }
+}
+
+.advantages__item {
+  padding-top: 98px;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding-top: 0;
+    padding-left: 82px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-left: 0;
+    padding-top: 98px;
+  }
+
+  &::before {
+    content: "";
+    width: 52px;
+    height: 56px;
+    background-size: 52px 56px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $tablet) {
+      top: 3px;
+      left: 10px;
+      transform: none;
+    }
+
+    @media (min-width: $desktop) {
+      top: 21px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--speed::before {
+    background-image: url("../../images/icons/stack.svg#speed");
+  }
+
+  &--convenience::before {
+    background-image: url("../../images/icons/stack.svg#convenience");
+
+    @media (min-width: $tablet) {
+      top: -1px;
+    }
+
+    @media (min-width: $desktop) {
+      top: 21px;
+    }
+  }
+
+  &--cheerfulness::before {
+    background-image: url("../../images/icons/stack.svg#cheerfulness");
+
+    @media (min-width: $tablet) {
+      top: -1px;
+    }
+
+    @media (min-width: $desktop) {
+      top: 21px;
+    }
+  }
+
+  &--environmental::before {
+    background-image: url("../../images/icons/stack.svg#environmental");
+  }
+}
+
+.advantages__item-title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop) {
+    text-align: center;
+  }
+}
+
+.advantages__item-text {
+  width: 280px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: $tablet) {
+    width: 260px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop) {
+    width: 315px;
+    text-align: center;
+  }
+}

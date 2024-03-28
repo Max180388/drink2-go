@@ -1,0 +1,43 @@
+.slider-pagination__button {
+  @include button-null;
+  width: 62px;
+  height: 24px;
+  margin-right: 3px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--active {
+    &::before {
+      background-color: #7859cf;
+    }
+  }
+
+  &:hover::before {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:focus-visible::before {
+    outline: none;
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::before {
+      outline: none;
+      background-color: rgba(120, 89, 207, 0.25);
+    }
+  }
+
+  &:active::before {
+    background-color: #7859cf;
+  }
+}

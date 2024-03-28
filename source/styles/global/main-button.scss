@@ -1,0 +1,64 @@
+.main-button {
+  width: 113px;
+  min-height: 40px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #7859cf;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+
+  &--reset {
+    background-color: #ffffff;
+    color: #7859cf;
+  }
+
+  &--decor {
+    min-height: 36px;
+    padding-left: 46px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 16px;
+      background-image: url("../../images/icons/stack.svg#add-cart");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 20px 16px;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+  }
+
+  &:hover {
+    background-color: #9070ec;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #9070ec;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #9070ec;
+    }
+  }
+
+  &:active {
+    background-color: #593cac;
+  }
+
+  &--disabled {
+    background-color: #bdbdbd;
+  }
+}

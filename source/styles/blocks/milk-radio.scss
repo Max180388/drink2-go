@@ -1,0 +1,70 @@
+.milk-radio__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.milk-radio__label {
+  padding-left: 34px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    border: 2px solid #bdbdbd;
+    position: absolute;
+    top: -3px;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: #7859cf;
+    position: absolute;
+    top: 1px;
+    left: 4px;
+  }
+}
+
+.milk-radio__input:checked ~ .milk-radio__label::after {
+  display: block;
+}
+
+.milk-radio__input:checked ~ .milk-radio__label::before {
+  border: 2px solid #7859cf;
+}
+
+.milk-radio__input:disabled ~ .milk-radio__label {
+  color: #bdbdbd;
+}
+
+.milk-radio__input:disabled ~ .milk-radio__label::before {
+  border: 2px solid #e2e2e2;
+}
+
+.milk-radio__input:checked:disabled ~ .milk-radio__label::after {
+  background-color: #e2e2e2;
+}
+
+.milk-radio__input:hover ~ .milk-radio__label::after {
+  display: block;
+  background-color: rgba(120, 89, 207, 0.25);
+}
+
+.milk-radio__input:focus-visible ~ .milk-radio__label::after {
+  display: block;
+  background-color: rgba(120, 89, 207, 0.25);
+}
+
+@supports not selector(:focus-visible) {
+  .milk-radio__input:focus ~ .milk-radio__label::after {
+    display: block;
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+}

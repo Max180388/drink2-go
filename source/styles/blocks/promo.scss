@@ -1,0 +1,15 @@
+.promo {
+  position: relative;
+}
+
+.promo__pagination {
+  display: none;
+
+  @media (min-width: $desktop) {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 62px;
+  }
+}
